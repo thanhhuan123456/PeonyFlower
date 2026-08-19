@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản Phẩm - PEONY FLOWER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="1.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+               <img src="images/logo.png" alt="Peony Flower Logo">
+               <span>PEONY FLOWER</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="about.html">Giới Thiệu</a></li>
+                <li><a href="products.html" class="active">Sản Phẩm</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+            </ul>
+            <!-- Icon giỏ hàng kèm số lượng -->
+            <div class="cart-icon-wrapper" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+       <h1 class="page-title">Danh Mục Sản Phẩm</h1>
+
+       <!-- Bộ lọc danh mục & Tìm kiếm nhanh -->
+       <div class="filter-bar">
+            <div class="category-buttons">
+               <button class="filter-btn active" onclick="filterProducts('all')">Tất Cả</button>
+               <button class="filter-btn" onclick="filterProducts('hoa-tuoi')">Hoa Tươi</button>
+               <button class="filter-btn" onclick="filterProducts('cong-cu')">Công Cụ Cắm Hoa</button>
+               <button class="filter-btn" onclick="filterProducts('cuoi-hoi')">Dịch Vụ Cưới Hỏi</button>
+            </div>
+            <div class="search-box">
+               <input type="text" id="searchInput" onkeyup="searchProducts()" placeholder="Tìm sản phẩm nhanh...">
+            </div>
+        </div>
+
+        <!-- Lưới sản phẩm -->
+        <div class="product-grid" id="productGrid">
+         <!-- Hoa Tươi -->
+            <div class="product-card" data-category="hoa-tuoi">
+              <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=400" alt="Mẫu Đơn Hồng">
+              <h3>Mẫu Đơn Hồng Elegant</h3>
+              <p class="price">1.200.000 VNĐ</p>
+              <button class="btn add-cart-btn">Thêm Vào Giỏ</button>
+            </div>
+            <div class="product-card" data-category="hoa-tuoi">
+               <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=400" alt="Mẫu Đơn Trắng">
+               <h3>Mẫu Đơn Trắng Pure Bliss</h3>
+               <p class="price">1.500.000 VNĐ</p>
+               <button class="btn add-cart-btn">Thêm Vào Giỏ</button>
+            </div>
+            <div class="product-card" data-category="hoa-tuoi">
+               <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=400" alt="Lẵng Mẫu Đơn">
+               <h3>Lẵng Mẫu Đơn Sang Trọng</h3>
+               <p class="price">2.100.000 VNĐ</p>
+               <button class="btn add-cart-btn">Thêm Vào Giỏ</button>
+            </div>
+            <div class="product-card" data-category="hoa-tuoi">
+              <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=400" alt="Mẫu Đơn Đỏ">
+              <h3>Bó Mẫu Đơn Đỏ Premium</h3>
+              <p class="price">1.800.000 VNĐ</p>
+              <button class="btn add-cart-btn">Thêm Vào Giỏ</button>
+            </div>
+
+            <!-- Công Cụ Cắm Hoa -->
+            <div class="product-card" data-category="cong-cu">
+              <img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?q=80&w=400" alt="Kéo Cắt Cành">
+              <h3>Kéo Cắt Cành Chuyên Dụng</h3>
+              <p class="price">250.000 VNĐ</p>
+              <button class="btn add-cart-btn">Thêm Vào Giỏ</button>
+            </div>
+            <div class="product-card" data-category="cong-cu">
+              <img src="https://images.unsplash.com/photo-1584589167171-541ce45f1eea?q=80&w=400" alt="Bình Thủy Tinh">
+              <h3>Bình Thủy Tinh Cao Cấp</h3>
+              <p class="price">450.000 VNĐ</p>
+              <button class="btn add-cart-btn">Thêm Vào Giỏ</button>
+            </div>
+            <div class="product-card" data-category="cong-cu">
+               <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=400" alt="Bộ Xốp Cắm Hoa">
+               <h3>Bộ Xốp Cắm Hoa Oasis</h3>
+               <p class="price">120.000 VNĐ</p>
+               <button class="btn add-cart-btn">Thêm Vào Giỏ</button>
+            </div>
+
+           <!-- Dịch Vụ Cưới Hỏi -->
+           <div class="product-card" data-category="cuoi-hoi">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=400" alt="Hoa Cầm Tay Cô Dâu">
+              <h3>Hoa Cầm Tay Cô Dâu</h3>
+              <p class="price">1.800.000 VNĐ</p>
+              <button class="btn add-cart-btn">Đặt Dịch Vụ</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Script Lọc & Tìm Kiếm -->
+    <script>
+    function filterProducts(category) {
+        const cards = document.querySelectorAll('.product-card');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    function searchProducts() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const cards = document.querySelectorAll('.product-card');
+
+        cards.forEach(card => {
+            const title = card.querySelector('h3').innerText.toLowerCase();
+            if (title.includes(input)) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+    </script>
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PEONY FLOWER. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- 2. Khung Giỏ Hàng (Slide-out Cart Panel) -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Giỏ Hàng Của Bạn</h3>
+            <button class="close-btn" onclick="toggleCart()">&times;</button>
+        </div>
+                
+        <div class="cart-body" id="cart-items">
+            <p class="empty-msg">Giỏ hàng đang trống</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Tổng tiền:</span>
+                <strong id="cart-total">0 VNĐ</strong>
+            </div>
+                <button class="btn checkout-btn" onclick="checkout()">Thanh Toán</button>
+        </div>
+    </div>
+
+    <!-- Lớp phủ mờ nền khi mở giỏ hàng -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+    <script src="script.js"></script>
+</body>
+</html>

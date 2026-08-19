@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu - PEONY FLOWER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="1.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+               <img src="images/logo.png" alt="Peony Flower Logo">
+               <span>PEONY FLOWER</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="about.html" class="active">Giới Thiệu</a></li>
+                <li><a href="products.html">Sản Phẩm</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+            </ul>
+            <!-- Icon giỏ hàng kèm số lượng -->
+            <div class="cart-icon-wrapper" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container about-container">
+        <h1 class="page-title">Về PEONY FLOWER</h1>
+
+        <!-- 1. Câu chuyện thương hiệu -->
+        <section class="about-card">
+         <h2>Câu Chuyện Thương Hiệu</h2>
+         <p>
+            PEONY FLOWER ra đời từ niềm đam mê gửi gắm cảm xúc vào từng cánh hoa mẫu đơn kiêu sa. Chúng tôi tin rằng mỗi đóa hoa trao đi không chỉ là một món quà, mà là một thông điệp tình cảm chân thành, tinh tế và quý giá dành cho những người bạn yêu thương.
+         </p>
+         <p>
+            Tất cả sản phẩm tại tiệm đều được lựa chọn kỹ lưỡng từ các nguồn hoa cao cấp trong và ngoài nước, đảm bảo độ tươi mới kéo dài cùng tính nghệ thuật vượt trội trong từng thiết kế.
+         </p>
+        </section>
+
+        <!-- 2. Video nghệ thuật cắm hoa -->
+        <section class="about-card video-section">
+          <h2>Nghệ Thuật Cắm Hoa Tại PEONY</h2>
+          <p class="section-desc">Cùng chiêm ngưỡng quy trình tạo nên những tác phẩm hoa tinh tế từ đôi bàn tay khéo léo của các florist chuyên nghiệp.</p>
+            <div class="video-wrapper">
+                <video controls poster="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=1000">
+                   <source src="video4.mp4" type="video/mp4">
+                  Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+            </div>
+        </section>
+
+        <!-- 3. Giá trị cốt lõi -->
+        <section class="about-card">
+          <h2>Giá Trị Cốt Lõi</h2>
+            <div class="values-grid">
+               <div class="value-item">
+                  <div class="value-icon">🌸</div>
+                  <h3>Hoa Tươi Chọn Lọc</h3>
+                  <p>100% hoa tươi nhập mới mỗi ngày, giữ độ bền đẹp từ 5–7 ngày.</p>
+                </div>
+                <div class="value-item">
+                  <div class="value-icon">🎨</div>
+                  <h3>Thiết Kế Độc Bản</h3>
+                  <p>Mỗi bó hoa là một tác phẩm nghệ thuật riêng biệt theo đúng yêu cầu khách hàng.</p>
+                </div>
+                <div class="value-item">
+                   <div class="value-icon">🚚</div>
+                   <h3>Giao Hoa Tốc Hành</h3>
+                   <p>Đảm bảo giao tận tay trong vòng 2 giờ, giữ nguyên form dáng ban đầu.</p>
+                </div>
+            </div>
+        </section>
+
+       <!-- 4. Thống kê ấn tượng -->
+       <section class="about-card stats-section">
+            <div class="stat-item">
+               <span class="stat-number">5+</span>
+               <span class="stat-label">Năm Kinh Nghiệm</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">10.000+</span>
+              <span class="stat-label">Khách Hàng Hài Lòng</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Mẫu Thiết Kế Mới/Tháng</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PEONY FLOWER. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- 2. Khung Giỏ Hàng (Slide-out Cart Panel) -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Giỏ Hàng Của Bạn</h3>
+            <button class="close-btn" onclick="toggleCart()">&times;</button>
+        </div>
+                
+        <div class="cart-body" id="cart-items">
+            <p class="empty-msg">Giỏ hàng đang trống</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Tổng tiền:</span>
+                <strong id="cart-total">0 VNĐ</strong>
+            </div>
+                <button class="btn checkout-btn" onclick="checkout()">Thanh Toán</button>
+        </div>
+    </div>
+
+    <!-- Lớp phủ mờ nền khi mở giỏ hàng -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+    <script src="script.js"></script>
+</body>
+</html>

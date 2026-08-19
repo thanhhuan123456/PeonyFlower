@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEONY FLOWER - Trang Chủ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/1.png">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+               <img src="images/logo.png" alt="Peony Flower Logo">
+               <span>PEONY FLOWER</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Trang Chủ</a></li>
+                <li><a href="about.html">Giới Thiệu</a></li>
+                <li><a href="products.html">Sản Phẩm</a></li>
+                <li><a href="contact.html">Liên Hệ</a></li>
+            </ul>
+            <!-- Icon giỏ hàng kèm số lượng -->
+            <div class="cart-icon-wrapper" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="video-container">
+            <video class="bg-video active" autoplay muted loop playsinline src="video/2.mp4"></video>
+            <video class="bg-video" autoplay muted loop playsinline src="video/3.mp4"></video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Vẻ Đẹp Thuần Khiết & Sang Trọng</h1>
+            <p>Khám phá các bộ sưu tập hoa mẫu đơn tinh tế dành riêng cho bạn.</p>
+            <a href="products.html" class="btn">Xem Sản Phẩm</a>
+        </div>
+    </section>
+    <!-- Script tự động chuyển video mỗi 10 giây -->
+    <script>
+        const videos = document.querySelectorAll('.bg-video');
+        let currentVideoIndex = 0;
+
+        setInterval(() => {
+            // Tắt video hiện tại
+            videos[currentVideoIndex].classList.remove('active');
+        
+            // Chuyển sang video tiếp theo (quay lại video đầu nếu hết danh sách)
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+        
+            // Bật video tiếp theo
+            videos[currentVideoIndex].classList.add('active');
+        }, 10000); // 10000ms = 10 giây
+    </script>
+
+    <main class="container">
+        <!-- MỤC 1: SẢN PHẨM NỔI BẬT -->
+        <section class="bg-section bg-featured">
+            <h2 class="section-title">🌸 Sản Phẩm Nổi Bật 🌸</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                   <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?q=80&w=500" alt="Bó Mẫu Đơn Hồng">
+                   <h3>Bó Mẫu Đơn Hồng Elegant</h3>
+                   <p class="price">1.200.000 VNĐ</p>
+                   <a href="products.html" class="btn">Đặt Hàng</a>
+                </div>
+                <div class="product-card">
+                   <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=500" alt="Mẫu Đơn Trắng">
+                   <h3>Mẫu Đơn Trắng Pure Bliss</h3>
+                   <p class="price">1.500.000 VNĐ</p>
+                   <a href="products.html" class="btn">Đặt Hàng</a>
+                </div>
+                <div class="product-card">
+                   <img src="https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?q=80&w=500" alt="Bình Hoa Mẫu Đơn Đỏ">
+                   <h3>Bình Mẫu Đơn Đỏ Royal</h3>
+                   <p class="price">2.100.000 VNĐ</p>
+                  <a href="products.html" class="btn">Đặt Hàng</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=500" alt="Bó Mẫu Đơn Đỏ">
+                    <h3>Bó Mẫu Đơn Đỏ Premium</h3>
+                    <p class="price">1.800.000 VNĐ</p>
+                    <a href="products.html" class="btn">Đặt Hàng</a>
+                </div>
+           </div>
+        </section>
+
+         <!-- MỤC 2: CÔNG CỤ CẮM HOA -->
+        <section class="bg-section bg-tools">
+            <h2 class="section-title">✂️ Công Cụ Cắm Hoa ✂️</h2>
+           <div class="product-grid">
+                <div class="product-card">
+                  <img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?q=80&w=500" alt="Kéo Cắt Cành Chuyên Dụng">
+                  <h3>Kéo Cắt Cành Chuyên Dụng</h3>
+                  <p class="price">250.000 VNĐ</p>
+                  <a href="products.html" class="btn">Đặt Hàng</a>
+                </div>
+                <div class="product-card">
+                   <img src="https://images.unsplash.com/photo-1584589167171-541ce45f1eea?q=80&w=500" alt="Bình Thủy Tinh Cao Cấp">
+                   <h3>Bình Thủy Tinh Cao Cấp</h3>
+                   <p class="price">450.000 VNĐ</p>
+                   <a href="products.html" class="btn">Đặt Hàng</a>
+                </div>
+                <div class="product-card">
+                   <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=500" alt="Bộ Xốp Cắm Hoa Oasis">
+                    <h3>Bộ Xốp Cắm Hoa Premium</h3>
+                    <p class="price">120.000 VNĐ</p>
+                    <a href="products.html" class="btn">Đặt Hàng</a>
+                </div>
+            </div>
+        </section>
+
+          <!-- MỤC 3: DỊCH VỤ CƯỚI HỎI -->
+        <section class="bg-section bg-wedding">
+            <h2 class="section-title">💍 Dịch Vụ Cưới Hỏi 💍</h2>
+            <div class="product-grid">
+               <div class="product-card">
+                   <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500" alt="Hoa Cầm Tay Cô Dâu">
+                   <h3>Hoa Cầm Tay Cô Dâu</h3>
+                   <p class="price">1.800.000 VNĐ</p>
+                   <a href="contact.html" class="btn">Tư Vấn</a>
+                </div>
+                <div class="product-card">
+                   <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=500" alt="Trang Trí Cổng Hoa">
+                   <h3>Trang Trí Cổng Hoa Cưới</h3>
+                   <p class="price">Từ 8.500.000 VNĐ</p>
+                   <a href="contact.html" class="btn">Tư Vấn</a>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?q=80&w=500" alt="Trang Trí Bàn Tiệc Cưới">
+                    <h3>Trang Trí Bàn Tiệc Cưới</h3>
+                    <p class="price">Từ 5.000.000 VNĐ</p>
+                    <a href="contact.html" class="btn">Tư Vấn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>PEONY FLOWER</h3>
+                <p>Cửa hàng hoa tươi nghệ thuật cao cấp.</p>
+                <h4>Địa chỉ SHOP</h4>
+                <p>123 Đường Hoa, Quận 1, TP. Hồ Chí Minh</p>
+            </div>
+            <div>
+                <h4>Liên Hệ</h4>
+                <p>Facebook:Thu Nguyen</p>
+                <a href="https://www.facebook.com/thu.nguyen.31146?locale=vi_VN" target="_blank">https://www.facebook.com</a>
+                <p>Email: contact@peonyflower.vn</p>
+                <p>Hotline: 0947 398 977</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PEONY FLOWER. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- 2. Khung Giỏ Hàng (Slide-out Cart Panel) -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Giỏ Hàng Của Bạn</h3>
+            <button class="close-btn" onclick="toggleCart()">&times;</button>
+        </div>
+                
+        <div class="cart-body" id="cart-items">
+            <p class="empty-msg">Giỏ hàng đang trống</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Tổng tiền:</span>
+                <strong id="cart-total">0 VNĐ</strong>
+            </div>
+                <button class="btn checkout-btn" onclick="checkout()">Thanh Toán</button>
+        </div>
+    </div>
+
+    <!-- Lớp phủ mờ nền khi mở giỏ hàng -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+    <script src="script.js"></script>
+</body>
+</html>

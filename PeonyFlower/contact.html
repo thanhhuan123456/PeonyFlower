@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - PEONY FLOWER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="1.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+               <img src="images/logo.png" alt="Peony Flower Logo">
+               <span>PEONY FLOWER</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="about.html">Giới Thiệu</a></li>
+                <li><a href="products.html">Sản Phẩm</a></li>
+                <li><a href="contact.html" class="active">Liên Hệ</a></li>
+            </ul>
+            <!-- Icon giỏ hàng kèm số lượng -->
+            <div class="cart-icon-wrapper" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container contact-container">
+        <h1 class="page-title">Liên Hệ Với PEONY FLOWER</h1>
+
+        <div class="contact-grid">
+            <!-- CỘT TRÁI: THÔNG TIN CỬA HÀNG & FORM KHÁCH HÀNG -->
+            <div class="contact-left">
+                <div class="card-box info-box">
+                    <h2>Thông Tin Cửa Hàng</h2>
+                    <p>📍 <strong>Địa chỉ:</strong> 45 Nguyễn Thượng Hiền, Phường 5, Quận 3, TP. Hồ Chí Minh</p>
+                    <p>📞 <strong>Hotline:</strong> 0947 398 977</p>
+                    <p>✉️ <strong>Email:</strong> contact@peonyflower.com</p>
+                    <p>⏰ <strong>Giờ mở cửa:</strong> 08:00 - 21:00 (Hằng ngày)</p>
+                </div>
+
+                <div class="card-box form-box">
+                    <h2>Gửi Tin Nhắn Cho Chúng Tôi</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label>Họ và Tên</label>
+                            <input type="text" placeholder="Nhập họ tên của bạn" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số Điện Thoại</label>
+                            <input type="tel" placeholder="Nhập số điện thoại" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="Nhập địa chỉ email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung</label>
+                            <textarea rows="4" placeholder="Bạn cần hỗ trợ điều gì?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI: BẢN ĐỒ -->
+            <div class="contact-right card-box map-box">
+                <h2>Bản Đồ Cửa Hàng</h2>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4602324709493!2d106.68065097583802!3d10.776019959200427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3099bc2219%3A0x6b4a3a609d17d832!2s45%20Nguy%E1%BB%85n%20Th%C6%B0%E1%BB%A1ng%20Hi%E1%BB%81n%2C%20Ph%C6%B0%E1%BB%9Dng%205%2C%20Qu%E1%BA%ACn%203%2C%20H%E1%BB%93%20Ch%C3 me%20Minh!5e0!3m2!1svi!2s!4v1700000000000!5m2!1svi!2s" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 PEONY FLOWER. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- 2. Khung Giỏ Hàng (Slide-out Cart Panel) -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Giỏ Hàng Của Bạn</h3>
+            <button class="close-btn" onclick="toggleCart()">&times;</button>
+        </div>
+                
+        <div class="cart-body" id="cart-items">
+            <p class="empty-msg">Giỏ hàng đang trống</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Tổng tiền:</span>
+                <strong id="cart-total">0 VNĐ</strong>
+            </div>
+                <button class="btn checkout-btn" onclick="checkout()">Thanh Toán</button>
+        </div>
+    </div>
+
+    <!-- Lớp phủ mờ nền khi mở giỏ hàng -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+    <script src="script.js"></script>
+</body>
+</html>
